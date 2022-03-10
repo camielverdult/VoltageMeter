@@ -55,7 +55,7 @@ namespace Voltage_Displayer
                         }
                         else
                         {
-                            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(voltage)));
+                            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Value)));
                         }
                     });
                 }
