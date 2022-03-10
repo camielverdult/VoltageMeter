@@ -8,6 +8,8 @@ using System.IO.Ports;
 using System.Threading;
 using System.ComponentModel;
 using Windows.System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -31,10 +33,10 @@ namespace Voltage_Displayer
         private string voltage;
         private DispatcherQueue mainThread;
 
-        public Voltage(DispatcherQueue mainThread)
+        public Voltage(DispatcherQueue thread)
         {
             voltage = "";
-            mainThread = mainThread;
+            mainThread = thread;
         }
 
         public string Value
@@ -51,6 +53,11 @@ namespace Voltage_Displayer
                 }
             }
         }
+
+        //public void InvokePropertyChanged()
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(voltage)));
+        //}
     }
 
     public sealed partial class MainPage : Page
@@ -64,24 +71,42 @@ namespace Voltage_Displayer
         private void ReadVoltage()
         {
             System.Diagnostics.Debug.WriteLine($"Reading from Arduino Uno on port {arduinoPort.PortName}...");
+
+            string serialBuffer = "";
             while (arduinoPort.IsOpen)
             {
-                try
-                {
-                    var readVoltage = arduinoPort.ReadLine();
+                // C# has no regard to new line on serial port for some reason
+                // so we are going to use this mess of a solution
+                // which takes way too many loops, but whatever
+                
+                serialBuffer += (char)arduinoPort.ReadByte();
 
-                    if (readVoltage != _voltage.Value)
-                    {
-                        // Update displayed voltage
-                        _voltage.Value = readVoltage;
-                    }
-                } catch (Exception ex)
+                // Check if we have the dot point at the second location, otherwise our input doesn't make any sense
+                if (serialBuffer.Length == 2)
                 {
-                    System.Diagnostics.Debug.WriteLine("Serial port crashed.");
-                    return;
+                    if (serialBuffer[1] != '.')
+                    {
+                        // We want the value to be displayed properly, so we flush it until we get a dot in the second position
+                        serialBuffer = "";
+                    }
+                }
+
+                // We want the string to be 4 long
+                // 4.23 for example
+                if (serialBuffer.Length == 4) { 
+               
+                    System.Diagnostics.Debug.WriteLine(serialBuffer);
+
+                    // Update displayed voltage
+                    _voltage.Value = serialBuffer;
+
+                    // Reset buffer
+                    serialBuffer = "";
                 }
             }
         }
+
+    
 
         string GetComPortFromUSBName(string name)
         {
@@ -99,21 +124,31 @@ namespace Voltage_Displayer
             return portName;
         }
 
-        private async void OnDeviceAdded(DeviceWatcher sender, DeviceInformation deviceInformation)
+        private void OnDeviceAdded(DeviceWatcher sender, DeviceInformation deviceInformation)
         {
-            _voltage.Value = "Opening serial port...";
+            System.Diagnostics.Debug.WriteLine("Opening Arduino port...");
+
+            try
+            {
+                _voltage.Value = "Opening serial port...";
+            } catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Could not update text: {ex}");
+            }
             // Try opening serial port
             arduinoPort = new SerialPort();
 
             arduinoPort.PortName = GetComPortFromUSBName(deviceInformation.Name);
             arduinoPort.BaudRate = 9600;
-            
+            arduinoPort.DataBits = 8;
+            arduinoPort.StopBits = StopBits.Two;
+
             arduinoPort.Open();
             readThread = new Thread(ReadVoltage);
             readThread.Start();
         }
 
-        private async void OnDeviceRemoved(DeviceWatcher sender, DeviceInformationUpdate deviceInformationUpdate)
+        private void OnDeviceRemoved(DeviceWatcher sender, DeviceInformationUpdate deviceInformationUpdate)
         {
             System.Diagnostics.Debug.WriteLine("Removing Arduino...");
             arduinoPort.Close();
@@ -143,6 +178,12 @@ namespace Voltage_Displayer
                 deviceWatcher.Start();
             }
 
+            //Task.Run(() =>
+            //{
+            //    Thread.Sleep(10000);
+            //    _voltage.Value = "test";
+            //    _voltage.InvokePropertyChanged();
+            //});
         }
     }
 }
