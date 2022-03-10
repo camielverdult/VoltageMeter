@@ -47,3 +47,16 @@ C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage 
 C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\System.Management.dll
 C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\FxResources.System.CodeDom.SR.resw
 C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\FxResources.System.Management.SR.resw
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\Microsoft.Graphics.Canvas.dll
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\Microsoft.Graphics.Canvas.winmd
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\Xamarin.Forms.Core.dll
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\Xamarin.Forms.Core.pdb
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\Xamarin.Forms.Platform.UAP.dll
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\Xamarin.Forms.Platform.UAP.pdb
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\Xamarin.Forms.Platform.dll
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\Xamarin.Forms.Xaml.pdb
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\Microsoft.UI.Xaml.pri.xml
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\Xamarin.Forms.Platform.UAP.pri.xml
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\.winmd_cache\$Microsoft.Graphics.Canvas.winmd_636160715180000000.json

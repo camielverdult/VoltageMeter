@@ -7,7 +7,6 @@ using Windows.Devices.Enumeration;
 using System.IO.Ports;
 using System.Threading;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -25,6 +24,9 @@ namespace Voltage_Displayer
 
     public partial class Voltage : INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private string _voltage;
 
         public Voltage()
@@ -37,47 +39,36 @@ namespace Voltage_Displayer
             get { return _voltage; }
             set {
                 _voltage = value;
-                OnPropertyChanged();
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(_voltage)));
             }
         }
-
-        //INotifyPropertyChanged members
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        // Create the OnPropertyChanged method to raise the event
-        // The calling member's name will be used as the parameter.
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
-
     }
 
     public sealed partial class MainPage : Page
     {
         public Voltage _voltage = new Voltage();
         private SerialPort arduinoPort { get; set; }
+
         Thread readThread;
 
         private void ReadVoltage()
         {
-            while(arduinoPort.IsOpen)
+            System.Diagnostics.Debug.WriteLine($"Reading from Arduino Uno on port {arduinoPort.PortName}...");
+            while (arduinoPort.IsOpen)
             {
                 try
                 {
-                    arduinoPort.ReadLine();
-                } catch (Exception _)
+                    var readVoltage = arduinoPort.ReadLine();
+
+                    if (readVoltage != _voltage.Value)
+                    {
+                        // Update displayed voltage
+                        _voltage.Value = readVoltage;
+                    }
+                } catch (Exception ex)
                 {
                     System.Diagnostics.Debug.WriteLine("Serial port crashed.");
                     return;
-                }
-
-                var readVoltage = arduinoPort.ReadLine();
-
-                if (readVoltage != _voltage.Value)
-                {
-                    // Update displayed voltage
-                    _voltage.Value = readVoltage;
                 }
             }
         }
@@ -86,6 +77,7 @@ namespace Voltage_Displayer
         {
             if (!name.Contains("COM"))
             {
+                System.Diagnostics.Debug.WriteLine("Found Arduino Uno without a COM port?");
                 return "";
             }
 
