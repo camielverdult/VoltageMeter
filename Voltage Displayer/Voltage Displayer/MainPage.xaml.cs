@@ -7,6 +7,7 @@ using Windows.Devices.Enumeration;
 using System.IO.Ports;
 using System.Threading;
 using System.ComponentModel;
+using Windows.System;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -27,26 +28,35 @@ namespace Voltage_Displayer
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private string _voltage;
+        private string voltage;
+        private DispatcherQueue mainThread;
 
-        public Voltage()
+        public Voltage(DispatcherQueue mainThread)
         {
-            _voltage = "";
+            voltage = "";
+            mainThread = mainThread;
         }
 
         public string Value
         {
-            get { return _voltage; }
+            get { return voltage; }
             set {
-                _voltage = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(_voltage)));
+                voltage = value;
+                if (mainThread != null)
+                {
+                    mainThread.TryEnqueue(() =>
+                    {
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(voltage)));
+                    });
+                }
             }
         }
     }
 
     public sealed partial class MainPage : Page
     {
-        public Voltage _voltage = new Voltage();
+
+        public Voltage _voltage;
         private SerialPort arduinoPort { get; set; }
 
         Thread readThread;
@@ -91,7 +101,7 @@ namespace Voltage_Displayer
 
         private async void OnDeviceAdded(DeviceWatcher sender, DeviceInformation deviceInformation)
         {
-            System.Diagnostics.Debug.WriteLine("Adding Arduino!");
+            _voltage.Value = "Opening serial port...";
             // Try opening serial port
             arduinoPort = new SerialPort();
 
@@ -116,6 +126,8 @@ namespace Voltage_Displayer
         public MainPage()
         {
             InitializeComponent();
+            DispatcherQueue mainThread = DispatcherQueue.GetForCurrentThread();
+            _voltage = new Voltage(mainThread);
 
             _voltage.Value = "No Arduino found.";
 
