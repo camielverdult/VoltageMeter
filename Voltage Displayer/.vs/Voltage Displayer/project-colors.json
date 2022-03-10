@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "10a022cc-3e24-4467-b9d6-64aeebb34e3c": {
+      "ProjectGuid": "10a022cc-3e24-4467-b9d6-64aeebb34e3c",
+      "DisplayName": "Voltage Displayer",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

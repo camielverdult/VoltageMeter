@@ -1,0 +1,49 @@
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\Voltage Displayer.csproj.AssemblyReference.cache
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\App.g.i.cs
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\App.g.cs
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\MainPage.g.i.cs
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\MainPage.g.cs
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\App.xaml
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\MainPage.xaml
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\App.xbf
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\MainPage.xbf
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\App.xbf
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\MainPage.xbf
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\Voltage Displayer.xr.xml
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\Voltage Displayer.exe
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\Voltage Displayer.pdb
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\resources.pri
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\AppxManifest.xml
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\Core\AppxManifest.xml
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\Core\Voltage Displayer.exe
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\Voltage Displayer.build.appxrecipe
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\System.Runtime.dll
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\Microsoft.UI.Xaml.Markup.winmd
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\XamlTypeInfo.g.cs
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\XamlSaveStateFile.xml
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\Voltage Displayer.csproj.CoreCompileInputs.cache
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\Voltage Displayer.csproj.CopyComplete
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\Voltage Displayer.exe
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\Voltage Displayer.pdb
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\ResourceHandlingTask.state
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\priconfig.xml
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\priconfig.xml.intermediate
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\unfiltered.layout.resfiles
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\unfiltered.layout.resfiles.intermediate
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\filtered.layout.resfiles
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\filtered.layout.resfiles.intermediate
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\excluded.layout.resfiles
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\excluded.layout.resfiles.intermediate
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\resources.resfiles
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\resources.resfiles.intermediate
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\pri.resfiles
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\pri.resfiles.intermediate
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\qualifiers.txt
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\qualifiers.txt.intermediate
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_637424779200000000.json
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\System.CodeDom.dll
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\bin\x86\Debug\System.Management.dll
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\FxResources.System.CodeDom.SR.resw
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\obj\x86\Debug\FxResources.System.Management.SR.resw

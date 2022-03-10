@@ -1,0 +1,83 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Camiel Verdult\\Documents\\GitHub\\VoltageMeter\\Voltage Displayer\\Voltage Displayer\\Voltage Displayer.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Camiel Verdult\\Documents\\GitHub\\VoltageMeter\\Voltage Displayer\\Voltage Displayer\\Voltage Displayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Camiel Verdult\\Documents\\GitHub\\VoltageMeter\\Voltage Displayer\\Voltage Displayer\\Voltage Displayer.csproj",
+        "projectName": "Voltage Displayer",
+        "projectPath": "C:\\Users\\Camiel Verdult\\Documents\\GitHub\\VoltageMeter\\Voltage Displayer\\Voltage Displayer\\Voltage Displayer.csproj",
+        "packagesPath": "C:\\Users\\Camiel Verdult\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Camiel Verdult\\Documents\\GitHub\\VoltageMeter\\Voltage Displayer\\Voltage Displayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Camiel Verdult\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "uap10.0.19041"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "uap10.0.19041": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "uap10.0.19041": {
+          "dependencies": {
+            "Microsoft.NETCore.UniversalWindowsPlatform": {
+              "target": "Package",
+              "version": "[6.2.12, )"
+            },
+            "System.Management": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      },
+      "runtimes": {
+        "win10-arm": {
+          "#import": []
+        },
+        "win10-arm-aot": {
+          "#import": []
+        },
+        "win10-arm64-aot": {
+          "#import": []
+        },
+        "win10-x64": {
+          "#import": []
+        },
+        "win10-x64-aot": {
+          "#import": []
+        },
+        "win10-x86": {
+          "#import": []
+        },
+        "win10-x86-aot": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

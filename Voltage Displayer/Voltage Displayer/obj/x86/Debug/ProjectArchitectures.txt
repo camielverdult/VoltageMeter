@@ -1,0 +1,1 @@
+C:\Users\Camiel Verdult\Documents\GitHub\VoltageMeter\Voltage Displayer\Voltage Displayer\Voltage Displayer.csproj;x86
