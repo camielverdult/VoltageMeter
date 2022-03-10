@@ -9,6 +9,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
 
-    <TextBlock x:ConnectionId='2'                         FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+    <TextBlock x:ConnectionId='2'                                FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
 </Page>
 

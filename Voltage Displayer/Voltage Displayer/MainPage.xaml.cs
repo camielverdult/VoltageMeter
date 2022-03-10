@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using Windows.Foundation;
 using Windows.UI.Xaml.Controls;
-
 
 using Windows.Devices.SerialCommunication;
 using Windows.Devices.Enumeration;
 using System.IO.Ports;
 using System.Threading;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -22,10 +22,40 @@ namespace Voltage_Displayer
         public const UInt16 VendorID = 0x2341;
         public const UInt16 ProductID = 0x0043;
     }
+
+    public partial class Voltage : INotifyPropertyChanged
+    {
+        private string _voltage;
+
+        public Voltage()
+        {
+            _voltage = "";
+        }
+
+        public string Value
+        {
+            get { return _voltage; }
+            set {
+                _voltage = value;
+                OnPropertyChanged();
+            }
+        }
+
+        //INotifyPropertyChanged members
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        // Create the OnPropertyChanged method to raise the event
+        // The calling member's name will be used as the parameter.
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+    }
+
     public sealed partial class MainPage : Page
     {
-        public string Voltage { get; set; }
-
+        public Voltage _voltage = new Voltage();
         private SerialPort arduinoPort { get; set; }
         Thread readThread;
 
@@ -33,12 +63,21 @@ namespace Voltage_Displayer
         {
             while(arduinoPort.IsOpen)
             {
+                try
+                {
+                    arduinoPort.ReadLine();
+                } catch (Exception _)
+                {
+                    System.Diagnostics.Debug.WriteLine("Serial port crashed.");
+                    return;
+                }
+
                 var readVoltage = arduinoPort.ReadLine();
 
-                if (readVoltage != Voltage)
+                if (readVoltage != _voltage.Value)
                 {
                     // Update displayed voltage
-
+                    _voltage.Value = readVoltage;
                 }
             }
         }
@@ -78,15 +117,15 @@ namespace Voltage_Displayer
             arduinoPort.Close();
             arduinoPort.Dispose();
             arduinoPort = null;
-            Voltage = "Arduino disconnected.";
+            _voltage.Value = "Arduino disconnected.";
         }
 
 
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
-            Voltage = "No Arduino found.";
+            _voltage.Value = "No Arduino found.";
 
             string deviceSelector = SerialDevice.GetDeviceSelectorFromUsbVidPid(ArduinoDevice.VendorID, ArduinoDevice.ProductID);
 
@@ -99,6 +138,7 @@ namespace Voltage_Displayer
             {
                 deviceWatcher.Start();
             }
+
         }
     }
 }

@@ -9,5 +9,5 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
 
-    <TextBlock Text="{x:Bind Voltage}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+    <TextBlock Text="{x:Bind _voltage.Value}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
 </Page>
