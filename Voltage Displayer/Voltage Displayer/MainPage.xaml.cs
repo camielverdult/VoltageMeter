@@ -48,7 +48,15 @@ namespace Voltage_Displayer
                 {
                     mainThread.TryEnqueue(() =>
                     {
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(voltage)));
+                        System.Diagnostics.Debug.WriteLine("Invoking propery changed on main thread!");
+                        if (PropertyChanged == null)
+                        {
+                            System.Diagnostics.Debug.WriteLine("PropertyChanged is null!");
+                        }
+                        else
+                        {
+                            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(voltage)));
+                        }
                     });
                 }
             }
@@ -63,7 +71,7 @@ namespace Voltage_Displayer
     public sealed partial class MainPage : Page
     {
 
-        public Voltage _voltage;
+        public Voltage voltage;
         private SerialPort arduinoPort { get; set; }
 
         Thread readThread;
@@ -95,10 +103,10 @@ namespace Voltage_Displayer
                 // 4.23 for example
                 if (serialBuffer.Length == 4) { 
                
-                    System.Diagnostics.Debug.WriteLine(serialBuffer);
+                    // System.Diagnostics.Debug.WriteLine(serialBuffer);
 
                     // Update displayed voltage
-                    _voltage.Value = serialBuffer;
+                    voltage.Value = serialBuffer;
 
                     // Reset buffer
                     serialBuffer = "";
@@ -130,7 +138,7 @@ namespace Voltage_Displayer
 
             try
             {
-                _voltage.Value = "Opening serial port...";
+                voltage.Value = "Opening serial port...";
             } catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine($"Could not update text: {ex}");
@@ -154,7 +162,7 @@ namespace Voltage_Displayer
             arduinoPort.Close();
             arduinoPort.Dispose();
             arduinoPort = null;
-            _voltage.Value = "Arduino disconnected.";
+            voltage.Value = "Arduino disconnected.";
         }
 
 
@@ -162,9 +170,9 @@ namespace Voltage_Displayer
         {
             InitializeComponent();
             DispatcherQueue mainThread = DispatcherQueue.GetForCurrentThread();
-            _voltage = new Voltage(mainThread);
+            voltage = new Voltage(mainThread);
 
-            _voltage.Value = "No Arduino found.";
+            voltage.Value = "No Arduino found.";
 
             string deviceSelector = SerialDevice.GetDeviceSelectorFromUsbVidPid(ArduinoDevice.VendorID, ArduinoDevice.ProductID);
 
